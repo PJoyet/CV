@@ -49,13 +49,13 @@ jobs:
 
     - name: Check pdf file
       run: |
-        file CV_JOYET.pdf | grep -q ' PDF '
+        file main.pdf | grep -q ' PDF '
 
     - name: Upload file to repository
       run: |
         git config --global user.name "PJoyet"
         git config --global user.email "pierre.joyet@yahoo.fr"
-        git add CV_JOYET.pdf
+        git add main.pdf
         git commit -m "mise a jour pdf"
         git push
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
